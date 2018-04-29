@@ -1,0 +1,14 @@
+syntax="proto2";
+package WacomInkFormat;
+
+option optimize_for = LITE_RUNTIME;
+
+message Path {
+    optional float startParameter = 1 [default = 0];
+    optional float endParameter = 2 [default = 1];
+    optional uint32 decimalPrecision = 3 [default = 2];
+    required bytes points = 4;
+    required bytes strokeWidths = 5;
+    required bytes strokeColor = 6;
+    optional sint32 unknown = 9;
+}
